@@ -1,0 +1,15 @@
+<!--index.html-->
+
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+
+
+
+{{ if .is_logged_in }}
+{{ template "select.html" .}}
+{{end}}
+{{ if not .is_logged_in }}
+{{ template "introduce.html" .}}
+{{end}}
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}

@@ -1,0 +1,33 @@
+<!--submission-successful.html-->
+
+<!--Embed the header.html template at this location-->
+{{ template "header.html" .}}
+<h1>Fifty result from Database</h1>
+<p>Rate from 1 to ten , Complexity from 1 to 5 .</p>
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Rate</th>
+      <th>vote</th>
+      <th>complexity</th>
+      <th>miniplayers</th>
+      <th>maxplayers</th>
+      <th>playtime</th>
+    </tr>
+    {{range .payload }}
+    <tr>
+        <td>{{ .Name}}</td>
+        <td>{{ .Average}}</td>
+        <td>{{ .Rate}}</td>
+        <td>{{ .Weight}}</td>
+        <td>{{ .Minp}}</td>
+        <td>{{ .Maxp}}</td>
+        <td>{{ .Time}}</td>
+    </tr>
+    {{end}}
+  <!--Display the linked title of the newly created article-->
+</div>
+    
+<!--Embed the footer.html template at this location-->
+{{ template "footer.html" .}}

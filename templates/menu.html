@@ -1,0 +1,43 @@
+<!--menu.html-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Board game selecter</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarCollapse">
+      <ul class="navbar-nav  d-flex">
+        {{ if .is_logged_in }}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">search</a>
+        </li>
+        {{end}}
+        {{ if not .is_logged_in }}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/u/register">Register</a>
+        </li>
+        {{end}}  
+
+        {{ if not .is_logged_in }}
+        <!--Display this link only when the user is not logged in-->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/u/login">login</a>
+        </li>
+        {{end}} 
+        {{ if .is_logged_in }}
+          <!--Display this link only when the user is logged in-->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/u/logout">logout</a>
+          </li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+
+
+<main class="container-fluid">
+
